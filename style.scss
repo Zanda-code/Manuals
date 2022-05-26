@@ -1,0 +1,67 @@
+$fontColor: #dd983c;
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    background-color: #2d2d2d;
+}
+h6{
+    font-size: 1.5em;
+    margin: 1em 0 1em 0;
+}
+.mainContent{
+    color: $fontColor;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    &__title{
+        font-size: 40px;
+        width: 100vw;
+        text-align: center;
+    }
+    &__box{
+        width: 30vh;
+        height: 30vh;
+        border: 1px solid $fontColor;
+        border-radius: 15px;
+        margin: 3% 5% 3% 13%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__select{
+        color: #ffffff;
+        width: 80%;
+        margin: 1em;
+        padding: 7px;
+        border-radius: 15px;
+        outline: 0;
+        background-color: #2d2d2d;
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: bold;
+    }
+    &__btn{
+        font-size: 15px;
+        color: $fontColor;
+        width: 50%;
+        border: 1px solid #515151;
+        border-radius: 15px;
+        background-color: #2d2d2d;
+        padding: 3px;
+        cursor: pointer;
+        &:active{
+            transform: scale(0.98);
+            box-shadow: 3px 2px 22px 1px #00000055;
+        }
+        &:hover{
+            background-color: #515151;
+            font-size: 17px;
+        }
+    }
+}
+
