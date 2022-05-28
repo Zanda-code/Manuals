@@ -1,5 +1,8 @@
+import myJson from "./data.json" assert {type: "json"};
+
 const selectProducer = document.querySelector(`#producer`);
 const selectModel = document.querySelector(`#model`);
+const btn = document.querySelector(`.mainContent__btn`);
 
 const testIndexFunction = () => {
     const index = selectProducer.selectedIndex;
@@ -13,14 +16,14 @@ const testIndexFunction = () => {
         const option2 = document.createElement(`option`);
         const option3 = document.createElement(`option`);
         const option4 = document.createElement(`option`);
-        option1.innerText = `pc 1616`;
+        option1.innerText = `pc 1616/1832/1864`;
         option1.value = `pc1616`;
         selectModel.appendChild(option1);
-        option2.innerText = `pc 1832`;
-        option2.value = `pc1832`;
+        option2.innerText = `HS 2016/2032/2064/2128`;
+        option2.value = `HS2016`;
         selectModel.appendChild(option2);
-        option3.innerText = `pc 1864`;
-        option3.value = `pc1864`;
+        option3.innerText = `pc 5010`;
+        option3.value = `pc5010`;
         selectModel.appendChild(option3);
         option4.innerText = `pc 9155`;
         option4.value = `pc9155`;
@@ -48,4 +51,13 @@ const testIndexFunction = () => {
     }
 }
 
+
+const findGoodManuals = () => {
+    const filter = myJson.filter(myJson => myJson.type === selectModel.value);
+    console.log(filter);
+}
+
+
 selectProducer.addEventListener(`change`, testIndexFunction);
+btn.addEventListener(`click`, findGoodManuals);
+
