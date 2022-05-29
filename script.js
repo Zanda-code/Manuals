@@ -1,4 +1,11 @@
 import myJson from "./data.json" assert {type: "json"};
+const arr = [myJson].map(e => [
+    e.name,
+    e.user,
+    e.program
+])
+console.log(arr);
+console.log(myJson.pc1616);
 
 const selectProducer = document.querySelector(`#producer`);
 const selectModel = document.querySelector(`#model`);
@@ -53,8 +60,7 @@ const testIndexFunction = () => {
 
 
 const findGoodManuals = () => {
-    const filter = myJson.filter(myJson => myJson.type === selectModel.value);
-    console.log(filter);
+    console.log(selectModel.value);
 }
 
 
