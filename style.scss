@@ -18,6 +18,25 @@ h6{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    align-items: center;
+    &__newWindow{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        position: fixed;
+        min-width: 20%;
+        width: auto;
+        height: 70%;
+        height: auto;
+        background-color: #ffffff;
+        //transform: translateY(-2%);
+        padding: 20px 20px 40px 20px;
+        border: 1px solid black;
+        border-radius: 1em;
+        display: none;
+    }
     &__title{
         font-size: 40px;
         width: 100vw;

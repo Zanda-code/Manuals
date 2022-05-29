@@ -1,15 +1,15 @@
 import myJson from "./data.json" assert {type: "json"};
-const arr = [myJson].map(e => [
-    e.name,
-    e.user,
-    e.program
-])
-console.log(arr);
-console.log(myJson.pc1616);
 
 const selectProducer = document.querySelector(`#producer`);
 const selectModel = document.querySelector(`#model`);
 const btn = document.querySelector(`.mainContent__btn`);
+const mainContent = document.querySelector(`.mainContent`);
+const newWindow = document.querySelector(`.mainContent__newWindow`);
+const newWindowH1 = document.querySelector(`#newWindow__h1`);
+const newWindowFirstH2 = document.querySelector(`#newWindow__firstH2`);
+const newWindowSecondH2 = document.querySelector(`#newWindow__secondH2`);
+const newWindowFirstBtn = document.querySelector(`#newWindow__firstBtn`);
+const newWindowSecondBtn = document.querySelector(`#newWindow__secondBtn`);
 
 const testIndexFunction = () => {
     const index = selectProducer.selectedIndex;
@@ -60,7 +60,14 @@ const testIndexFunction = () => {
 
 
 const findGoodManuals = () => {
-    console.log(selectModel.value);
+    const newJson = myJson.filter(i => i.name === selectModel.value);
+    console.log(newJson);
+    newWindowH1.innerText = `${selectProducer.value} - ${selectModel.value}`;
+    newWindowFirstH2.innerText = `Instrukcja użytkownika`;
+    newWindowSecondH2.innerText = `Instrukcja programowania`;
+    
+    newWindow.style.display = `flex`;
+
 }
 
 
