@@ -38,5 +38,25 @@
         "name": "ca64",
         "userManual": "https://www.satel.eu/archiwum/ca64u.pdf",
         "programmingManual": "https://www.satel.eu/archiwum/ca64opis.pdf"
+    },
+    {
+        "name": "integra",
+        "userManual": "https://www.e-alarmy.pl/download/instrukcje/SATEL_integra_ins-uzy.pdf",
+        "programmingManual": "https://www.montersi.pl/instrukcje/integra-programowanie.pdf"
+    },
+    {
+        "name": "versa",
+        "userManual": "https://www.montersi.pl/instrukcje/versa-led-gr-instrukcja.pdf",
+        "programmingManual": "https://sklep.elstop.pl/files/versa-10-centrala-alarmowa-2.pdf"
+    },
+    {
+        "name": "versaip",
+        "userManual": "https://www.montersi.pl/instrukcje/versa-led-gr-instrukcja.pdf",
+        "programmingManual": "https://www.montersi.pl/instrukcje/versa-ip-instrukcja.pdf"
+    },
+    {
+        "name": "perfecta",
+        "userManual": "https://b2bgo.janexint.com.pl/files/583/instrukcja-perfecta-32-wrl-instrukcja-skrocona.pdf",
+        "programmingManual": "https://www.sklep.elstop.pl/files/perfecta-16-3.pdf"
     }
 ]

@@ -44,6 +44,10 @@ const testIndexFunction = () => {
         const option2 = document.createElement(`option`);
         const option3 = document.createElement(`option`);
         const option4 = document.createElement(`option`);
+        const option5 = document.createElement(`option`);
+        const option6 = document.createElement(`option`);
+        const option7 = document.createElement(`option`);
+        const option8 = document.createElement(`option`);
         option1.innerText = `CA 5`;
         option1.value = `ca5`;
         selectModel.appendChild(option1);
@@ -56,6 +60,18 @@ const testIndexFunction = () => {
         option4.innerText = `CA 64`;
         option4.value = `ca64`;
         selectModel.appendChild(option4);
+        option5.innerText = `INTEGRA`;
+        option5.value = `integra`;
+        selectModel.appendChild(option5);
+        option6.innerText = `Versa 5/10/15`;
+        option6.value = `versa`;
+        selectModel.appendChild(option6);
+        option7.innerText = `Versa IP`;
+        option7.value = `versaip`;
+        selectModel.appendChild(option7);
+        option8.innerText = `Perfecta`;
+        option8.value = `perfecta`;
+        selectModel.appendChild(option8);
     }
 }
 const findGoodManuals = () => {
