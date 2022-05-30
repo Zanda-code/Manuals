@@ -33,7 +33,7 @@ const testIndexFunction = () => {
         option3.innerText = `pc 5010`;
         option3.value = `pc5010`;
         selectModel.appendChild(option3);
-        option4.innerText = `pc 9155`;
+        option4.innerText = `pc 9155 (Alexor)`;
         option4.value = `pc9155`;
         selectModel.appendChild(option4);
     }

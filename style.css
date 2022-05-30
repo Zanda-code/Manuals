@@ -21,6 +21,7 @@ h6 {
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;
+  text-align: center;
 }
 .mainContent__close {
   display: flex;
