@@ -10,6 +10,7 @@ const newWindowFirstH2 = document.querySelector(`#newWindow__firstH2`);
 const newWindowSecondH2 = document.querySelector(`#newWindow__secondH2`);
 const newWindowFirstBtn = document.querySelector(`#newWindow__firstBtn`);
 const newWindowSecondBtn = document.querySelector(`#newWindow__secondBtn`);
+const closeBtn = document.querySelector(`.mainContent__close`);
 
 const testIndexFunction = () => {
     const index = selectProducer.selectedIndex;
@@ -57,20 +58,25 @@ const testIndexFunction = () => {
         selectModel.appendChild(option4);
     }
 }
-
-
 const findGoodManuals = () => {
     const newJson = myJson.filter(i => i.name === selectModel.value);
-    console.log(newJson);
     newWindowH1.innerText = `${selectProducer.value} - ${selectModel.value}`;
     newWindowFirstH2.innerText = `Instrukcja użytkownika`;
     newWindowSecondH2.innerText = `Instrukcja programowania`;
-    
     newWindow.style.display = `flex`;
-
+    const hrefUserManual = newJson[0].userManual;
+    const hrefProgrammingManual = newJson[0].programmingManual;
+    newWindowFirstBtn.setAttribute(`href`, hrefUserManual);
+    newWindowSecondBtn.setAttribute(`href`, hrefProgrammingManual);
+}
+const closeWindow = () => {
+    newWindow.style.display = `none`;
 }
 
+const events = () => {
+    selectProducer.addEventListener(`change`, testIndexFunction);
+    btn.addEventListener(`click`, findGoodManuals);
+    closeBtn.addEventListener(`click`, closeWindow);
+}
 
-selectProducer.addEventListener(`change`, testIndexFunction);
-btn.addEventListener(`click`, findGoodManuals);
-
+events();

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   margin: 0;
   padding: 0;
@@ -20,6 +21,21 @@ h6 {
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;
+}
+.mainContent__close {
+  display: flex;
+  justify-content: end;
+  width: 100%;
+  position: absolute;
+  transform: translateY(-160%);
+  margin-right: 5%;
+}
+.mainContent__close::after {
+  display: inline-block;
+  content: "×";
+  font-size: 4em;
+  color: black;
+  cursor: pointer;
 }
 .mainContent__newWindow {
   display: flex;
@@ -66,7 +82,11 @@ h6 {
   font-weight: bold;
 }
 .mainContent__btn {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
   font-size: 15px;
+  font-weight: bold;
   color: #dd983c;
   width: 50%;
   border: 1px solid #515151;

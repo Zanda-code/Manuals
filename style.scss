@@ -19,6 +19,21 @@ h6{
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
+    &__close{
+        display: flex;
+        justify-content: end;
+        width: 100%;
+        position: absolute;
+        transform: translateY(-160%);
+        margin-right: 5%;
+        &::after{
+            display: inline-block;
+            content: "\00d7";
+            font-size: 4em;
+            color: black;
+            cursor: pointer;
+        }
+    }
     &__newWindow{
         display: flex;
         flex-direction: column;
@@ -65,7 +80,11 @@ h6{
         font-weight: bold;
     }
     &__btn{
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
         font-size: 15px;
+        font-weight: bold;
         color: $fontColor;
         width: 50%;
         border: 1px solid #515151;
