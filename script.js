@@ -20,7 +20,15 @@ const testIndexFunction = () => {
     else if(index === 1){
         selectModel.innerHTML = ``;
         selectModel.removeAttribute(`disabled`);
-        const option1 = document.createElement(`option`);
+        const newJson = myJson.filter(i => i.index === `DSC`);
+        console.log(newJson);
+        newJson.forEach((e, i) => {
+            e = document.createElement(`option`);
+            e.innerText = `${newJson[i].name}`;
+            selectModel.appendChild(e);
+            
+        });
+        /*const option1 = document.createElement(`option`);
         const option2 = document.createElement(`option`);
         const option3 = document.createElement(`option`);
         const option4 = document.createElement(`option`);
@@ -35,7 +43,7 @@ const testIndexFunction = () => {
         selectModel.appendChild(option3);
         option4.innerText = `pc 9155 (Alexor)`;
         option4.value = `pc9155`;
-        selectModel.appendChild(option4);
+        selectModel.appendChild(option4);*/
     }
     else if(index === 2){
         selectModel.innerHTML = ``;
