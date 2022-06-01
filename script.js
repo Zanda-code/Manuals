@@ -1,4 +1,5 @@
 import myJson from "./data.json" assert {type: "json"};
+const names = Object.getOwnPropertyNames(myJson);
 
 const selectProducer = document.querySelector(`#producer`);
 const selectModel = document.querySelector(`#model`);
@@ -11,7 +12,30 @@ const newWindowFirstBtn = document.querySelector(`#newWindow__firstBtn`);
 const newWindowSecondBtn = document.querySelector(`#newWindow__secondBtn`);
 const closeBtn = document.querySelector(`.mainContent__close`);
 
-const testIndexFunction = () => {
+console.log(myJson[`DSC`]);
+
+const createProducer = () => {
+    names.forEach((e, i) => {
+        e = document.createElement(`option`);
+        e.innerText = names[i];
+        selectProducer.appendChild(e);
+    })
+}
+
+const availableModel = () => {
+    if (selectProducer.value === `Wybierz producenta...`){
+        selectModel.setAttribute(`disabled`, `True`);
+    }
+    else{
+        selectModel.removeAttribute(`disabled`);
+        const newArray = myJson[`${selectProducer.value}`];
+        const newArrayFiltered = newArray.filter(i => i.name === selectModel.value);
+        const newOption = document.createElement(`option`);
+        selectModel.appendChild(newOption);
+        selectModel.innerText = `${newArrayFiltered[0]}`;
+    }
+}
+/*const testIndexFunction = () => {
     const index = selectProducer.selectedIndex;
     if(index === 0){
         selectModel.setAttribute(`disabled`, `true`);
@@ -34,7 +58,16 @@ const testIndexFunction = () => {
             selectModel.appendChild(e);
         });
     }
-}
+    else if(index === 3){
+        selectModel.innerHTML = ``;
+        selectModel.removeAttribute(`disabled`);
+        myJson.jablotron.forEach((e, i) => {
+            e = document.createElement(`option`);
+            e.innerText = `${myJson.jablotron[i].name}`;
+            selectModel.appendChild(e);
+        });
+    }
+}*/
 const findGoodManuals = () => {
     const newArray = myJson[`${selectProducer.value}`];
     const newArrayFiltered = newArray.filter(i => i.name === selectModel.value);
@@ -52,9 +85,10 @@ const closeWindow = () => {
 }
 
 const events = () => {
-    selectProducer.addEventListener(`change`, testIndexFunction);
+    selectProducer.addEventListener(`change`, availableModel);
     btn.addEventListener(`click`, findGoodManuals);
     closeBtn.addEventListener(`click`, closeWindow);
 }
 
 events();
+createProducer();

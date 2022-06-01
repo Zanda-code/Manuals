@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200;1,300&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="#">
     <title>Manuals</title>
 </head>
 <body>
@@ -18,9 +19,8 @@
                     <h6>Centrale alarmowe</h6>
                     <label for="producer">Producent</label>
                     <select name="1" id="producer" class="mainContent__select">
-                        <option value="none" selected>Wybierz producenta...</option>
-                        <option value="dsc">DSC</option>
-                        <option value="satel">SATEL</option>
+                        <option id="controlOption" selected>Wybierz producenta...</option>
+                        
                     </select>
                     <label for="model">Model</label>
                     <select name="1" id="model" class="mainContent__select" disabled>
