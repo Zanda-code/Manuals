@@ -63,8 +63,11 @@
         "programmingManual": "https://www.sklep.elstop.pl/files/perfecta-16-3.pdf"
     }
     ],
-    "JABLOTRON":{
+    "JABLOTRON": [
+    {
         "name": "ja 60",
-        "userManual": ""
+        "userManual": "https://www.isystemy.pl/download/ja_60_uzytkownik.pdf",
+        "programmingManual": "http://www.alarmy-gerard.pl/pliki/allegro/ja_63_instal.pdf"
     }
+    ]
 }
