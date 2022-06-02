@@ -68,6 +68,42 @@
         "name": "ja 60",
         "userManual": "https://www.isystemy.pl/download/ja_60_uzytkownik.pdf",
         "programmingManual": "http://www.alarmy-gerard.pl/pliki/allegro/ja_63_instal.pdf"
+    },
+    {
+        "name": "ja 63",
+        "userManual": "https://www.sklep-jablotron.pl/pliki/ja_63_uzytkownik.pdf",
+        "programmingManual": "http://www.alarmy-gerard.pl/pliki/allegro/ja_63_instal.pdf"
+    },
+    {
+        "name": "ja 80K Oasis",
+        "userManual": "https://jablotron100.pl/media/File/Instrukcje/Instrukcje_Oasis/ja-80_ul.pdf",
+        "programmingManual": "https://www.isystemy.pl/download/instrukcje/ja-80ki.pdf"
+    }
+    ],
+    "CPX": [
+    {
+        "name": "230-NWB",
+        "userManual": "https://b2bgo.janexint.com.pl/files/3fa/instrukcja-cpx230nwb-zestaw-janex-iu-cpx230nwb.pdf",
+        "programmingManual": "https://ebssmart.com/documents/nasze-produkty/alarmowe-systemy/callisto-32/instrukcje-webinaria-faq/CPX230NWB_instr_instalatora_PL_w1.4.pdf"
+     }
+    ],
+    "RISCO": [
+    {
+        "name": "LightSys 2",
+        "userManual": "https://ivolta.pl/gfx-base/files/RISCO/LightSYS2/LightSYS2_iu.pdf",
+        "programmingManual": "https://ivolta.pl/gfx-base/files/RISCO/LightSYS2/LightSYS2_sii.pdf"
+    },
+    {
+        "name": "ProSYS",
+        "userManual": "https://www.weber-systems.pl/docs/pdf/Risco_ProSys_Instrukcja%20Uzytkownika.pdf",
+        "programmingManual": "https://b2bgo.janexint.com.pl/files/ca9/instrukcja-rp140ma-kcl-ii-2-prosys.pdf"
+    }
+    ],
+    "PYRONIX": [
+    {
+        "name": "MATRIX 424",
+        "userManual": "https://www.pyronix.com/wp-content/uploads/sites/2/2017/10/downloads2/774.pdf",
+        "programmingManual": "https://www.pyronix.com/wp-content/uploads/sites/2/2017/10/downloads2/770.pdf"
     }
     ]
 }

@@ -1,9 +1,20 @@
-import myJson from "./data.json" assert {type: "json"};
-const names = Object.getOwnPropertyNames(myJson);
+// AS - Alarm Systems
+// SE - Sensors
 
-const selectProducer = document.querySelector(`#producer`);
-const selectModel = document.querySelector(`#model`);
-const btn = document.querySelector(`.mainContent__btn`);
+
+import JsonAS from "./data.json" assert {type: "json"};
+const namesAS = Object.getOwnPropertyNames(JsonAS);
+import JsonSE from "./dataSE.json" assert {type: "json"};
+const namesSE = Object.getOwnPropertyNames(JsonSE);
+
+const selectProducerAS = document.querySelector(`#producer`);
+const selectModelAS = document.querySelector(`#model`);
+const btnAS = document.querySelector(`#btnAS`);
+const selectProducerSE = document.querySelector(`#producerSE`);
+const selectModelSE = document.querySelector(`#modelSE`);
+const btnSE = document.querySelector(`#btnSE`);
+
+
 const newWindow = document.querySelector(`.mainContent__newWindow`);
 const newWindowH1 = document.querySelector(`#newWindow__h1`);
 const newWindowFirstH2 = document.querySelector(`#newWindow__firstH2`);
@@ -12,48 +23,86 @@ const newWindowFirstBtn = document.querySelector(`#newWindow__firstBtn`);
 const newWindowSecondBtn = document.querySelector(`#newWindow__secondBtn`);
 const closeBtn = document.querySelector(`.mainContent__close`);
 
-const createProducer = () => {
-    names.forEach((e, i) => {
+const createProducerAS = () => {
+    namesAS.forEach((e, i) => {
         e = document.createElement(`option`);
-        e.innerText = names[i];
-        selectProducer.appendChild(e);
+        e.innerText = namesAS[i];
+        selectProducerAS.appendChild(e);
     })
 }
-const availableModel = () => {
-    if (selectProducer.value === `Wybierz producenta...`){
-        selectModel.setAttribute(`disabled`, `True`);
+const createProducerSE = () => {
+    namesSE.forEach((e, i) => {
+        e = document.createElement(`option`);
+        e.innerText = namesSE[i];
+        selectProducerSE.appendChild(e);
+    })
+}
+const availableModelAS = () => {
+    if (selectProducerAS.value === `Wybierz producenta...`){
+        selectModelAS.setAttribute(`disabled`, `True`);
     }
     else{
-        selectModel.removeAttribute(`disabled`);
-        selectModel.textContent = ``;
-        const newArray = myJson[`${selectProducer.value}`];
+        selectModelAS.removeAttribute(`disabled`);
+        selectModelAS.textContent = ``;
+        const newArray = JsonAS[`${selectProducerAS.value}`];
         newArray.forEach((el, i) => {
         el = document.createElement(`option`);
-        selectModel.appendChild(el);
+        selectModelAS.appendChild(el);
         el.innerText = `${newArray[i].name}`;
     }) 
     }
 }
-const findGoodManuals = () => {
-    const newArray = myJson[`${selectProducer.value}`];
-    const newArrayFiltered = newArray.filter(i => i.name === selectModel.value);
-    newWindowH1.innerText = `${selectProducer.value} - ${selectModel.value}`;
+const availableModelSE = () => {
+    if (selectProducerSE.value === `Wybierz producenta...`){
+        selectModelSE.setAttribute(`disabled`, `True`);
+    }
+    else{
+        selectModelSE.removeAttribute(`disabled`);
+        selectModelSE.textContent = ``;
+        const newArray = JsonSE[`${selectProducerSE.value}`];
+        newArray.forEach((el, i) => {
+        el = document.createElement(`option`);
+        selectModelSE.appendChild(el);
+        el.innerText = `${newArray[i].name}`;
+    }) 
+    }
+}
+const findGoodManualsAS = () => {
+    const newArray = JsonAS[`${selectProducerAS.value}`];
+    const newArrayFiltered = newArray.filter(i => i.name === selectModelAS.value);
+    newWindowH1.innerText = `${selectProducerAS.value} - ${selectModelAS.value}`;
     newWindowFirstH2.innerText = `Instrukcja użytkownika`;
     newWindowSecondH2.innerText = `Instrukcja programowania`;
     newWindow.style.display = `flex`;
+    newWindowSecondBtn.style.display = `block`;
     const hrefUserManual = newArrayFiltered[0].userManual;
     const hrefProgrammingManual = newArrayFiltered[0].programmingManual;
     newWindowFirstBtn.setAttribute(`href`, hrefUserManual);
     newWindowSecondBtn.setAttribute(`href`, hrefProgrammingManual);
 }
+
+const findGoodManualsSE = () => {
+    const newArray = JsonSE[`${selectProducerSE.value}`];
+    const newArrayFiltered = newArray.filter(i => i.name === selectModelSE.value);
+    newWindowH1.innerText = `${selectProducerSE.value} - ${selectModelSE.value}`;
+    newWindowFirstH2.innerText = `Instrukcja`;
+    newWindowSecondH2.innerText = ``;
+    newWindowSecondBtn.style.display = `none`;
+    newWindow.style.display = `flex`;
+    const hrefUserManual = newArrayFiltered[0].userManual;
+    newWindowFirstBtn.setAttribute(`href`, hrefUserManual);
+}
 const closeWindow = () => {
     newWindow.style.display = `none`;
 }
 const events = () => {
-    selectProducer.addEventListener(`change`, availableModel);
-    btn.addEventListener(`click`, findGoodManuals);
+    selectProducerAS.addEventListener(`change`, availableModelAS);
+    selectProducerSE.addEventListener(`change`, availableModelSE);
+    btnAS.addEventListener(`click`, findGoodManualsAS);
+    btnSE.addEventListener(`click`, findGoodManualsSE);
     closeBtn.addEventListener(`click`, closeWindow);
 }
 
 events();
-createProducer();
+createProducerAS();
+createProducerSE();
