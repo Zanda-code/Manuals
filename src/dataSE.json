@@ -1,0 +1,104 @@
+{
+    "DSC": [
+        {
+        "name": "Seria LC(100-105)",
+        "userManual": "https://alarmserwis.pl/instrukcje-dsc/DSC-czujki-LC-inst.pdf"
+        },
+        {
+        "name": "AC-101",
+        "userManual": "https://ealarmy.com.pl/pobierz/172/instrukcja-obslugi-ac-101-dsc"
+        },
+        {
+        "name": "PG8984P",
+        "userManual": "https://ealarmy.com.pl/pobierz/2747/instrukcja-instalacji-dualnej-czujki-bezprzewodowej-pg8984-dsc"
+        }
+    ],
+    "SATEL": [
+        {
+            "name": "AQUA pro",
+            "userManual": "https://www.satel.eu/en/download/instrukcje/aqua_pro_io_en_0711.pdf"
+        },
+        {
+            "name": "Cobalt",
+            "userManual": "https://www.e-alarmy.pl/download/instrukcje/SATEL_COBALT-plus-pro.pdf"
+        },
+        {
+            "name": "XD-2",
+            "userManual": "https://www.montersi.pl/instrukcje/XD-2-instrukcja.pdf"
+        },
+        {
+            "name": "DG-1",
+            "userManual": "https://down.dipol.com.pl/Alarms/G3623/G3623_Manual-0509_PL.pdf"
+        },
+        {
+            "name": "TSD-1",
+            "userManual": "https://www.bispro24.pl/files/tsd-1-instrukcja.pdf"
+        },
+        {
+            "name": "APD-200",
+            "userManual": "https://www.satel.eu/pl/download/instrukcje/apd-200_pet_pl_89397680.pdf"
+        },
+        {
+            "name": "AXD-200",
+            "userManual": "https://www.montersi.pl/instrukcje/axd-200-pl-instrukcja.pdf"
+        },
+        {
+            "name": "MPD-300",
+            "userManual": "https://www.e-alarmy.pl/download/instrukcje/satel_mpd300_ins.pdf"
+        },
+        {
+            "name": "MPD-310",
+            "userManual": "https://alarmserwis.pl/files/mpd-310_pet_pl_3842b43a.pdf"
+        }
+    ],
+    "JABLOTRON": [
+        {
+            "name": "JA60-P",
+            "userManual": "https://www.isystemy.pl/download/instrukcje/ja-60p-instrukcja-i.pdf"
+        }
+    ],
+    "CPX": [
+        {
+            "name": "PIR-10/11",
+            "userManual": "https://b2bgo.janexint.com.pl/files/6fa/instrukcja-pir-10-io-pir-11.pdf"
+        }
+    ],
+    "VIDICON": [
+        {
+            "name": "IX",
+            "userManual": "https://ealarmy.com.pl/pobierz/70/instrukcja-obslugi-czujki-ix-vidicon"
+        }
+    ],
+    "SIEMENS": [
+        {
+            "name": "PDM-I12",
+            "userManual": "https://euroalarm.com.pl/wp-content/uploads/2018/03/VI_Instrukcja-instalacji-PDM-1I12-PDM-I18.pdf"
+        }
+    ],
+    "BOSH": [
+        {
+            "name": "seria ISC",
+            "userManual": "https://www.napad.pl/instrukcje/broszura_czujnikow_bosch.pdf"
+        },
+        {
+            "name": "OD-850",
+            "userManual": "https://ivolta.pl/gfx-base/files/Bosch%20SSWiN/OD850-F1E/OD850-F1E_ii.pdf"
+        }
+    ],
+    "OPTEX": [
+        {
+            "name": "HX-40",
+            "userManual": "https://www.e-alarmy.pl/download/instrukcje/Optex/optex_hx40_ins.pdf"
+        },
+        {
+            "name": "HX-80",
+            "userManual": "https://s3-eu-west-1.amazonaws.com/optex-europe/sensor-downloads/Optex_HX-80N_80NAM_instrukcja_PL.pdf?mtime=20180807131857&focal=none"
+        }
+    ],
+    "REDWALL": [
+        {
+            "name": "SIP-3020",
+            "userManual": "https://www.napad.pl/instrukcje/sip-wskazowki-instalacyjne.pdf"
+        }
+    ]
+}

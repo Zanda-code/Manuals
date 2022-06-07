@@ -1,0 +1,62 @@
+{
+    "DSC": [
+        {
+        "name": "HSM2108",
+        "userManual": "https://www.montersi.pl/instrukcje/instrukcja-instalacji-modulu-hsm2108-dsc.pdf"
+        },
+        {
+        "name": "HSM2204/2300",
+        "userManual": "https://ealarmy.com.pl/pobierz/2674/instrukcja-instalacji-modulu-hsm2300-hsm2204-dsc"
+        },
+        {
+        "name": "PG8984P",
+        "userManual": "https://www.montersi.pl/instrukcje/instrukcja-instalacji-modulu-hsm2208-dsc.pdf"
+        },
+        {
+        "name": "3G2080/TL2803G",
+        "userManual": "https://ealarmy.com.pl/pobierz/2691/instrukcja-instalacji-nadajnika-3g2080-dsc"
+        },
+        {
+        "name": "TL280(R)",
+        "userManual": "https://ealarmy.com.pl/pobierz/2687/instrukcja-instalacji-nadajnika-tl280-dsc"
+        },
+        {
+        "name": "PC5108",
+        "userManual": "https://ealarmy.com.pl/pobierz/1437/instrukcja-ekspandera-pc5108-dsc"
+        }
+    ],
+    "SATEL": [
+        {
+        "name": "ACU-220",
+        "userManual": "https://www.montersi.pl/instrukcje/acu-220-instrukcja.pdf"
+        },
+        {
+        "name": "ACU-100",
+        "userManual": "https://www.e-alarmy.pl/download/instrukcje/SATEL_ACU-100.pdf"
+        },
+        {
+        "name": "INT-ADR",
+        "userManual": "https://www.satel.eu/en/download/instrukcje/int-adr_io_en_0514.pdf"
+        },
+        {
+        "name": "INT-E",
+        "userManual": "https://www.satel.eu/en/download/instrukcje/int-e_int_8235929c.pdf"
+        },
+        {
+        "name": "INT-O",
+        "userManual": "https://www.satel.eu/en/download/instrukcje/int-o_int_2a92b493.pdf"
+        },
+        {
+        "name": "INT-PP",
+        "userManual": "https://www.satel.eu/en/download/instrukcje/int-pp_int_188fa422.pdf"
+        },
+        {
+        "name": "INT-GSM",
+        "userManual": "https://down.dipol.com.pl/Alarms/G5018/G5018_Manual_INT_GSM_ii_PL.pdf"
+        },
+        {
+        "name": "ETHM-1 Plus",
+        "userManual": "https://down.dipol.com.pl/Alarms/G5204/G5204_Manual-0714_PL.pdf"
+        }
+    ]
+}

@@ -41,9 +41,21 @@
                     </select>
                     <button id="btnSE" class="mainContent__btn">Zatwierdź</button>
                 </div>
+                <div class="mainContent__box">
+                    <h6>Moduły</h6>
+                    <label for="producer">Producent</label>
+                    <select name="1" id="producerMO" class="mainContent__select">
+                        <option id="controlOption" selected>Wybierz producenta...</option>
+                        
+                    </select>
+                    <label for="model">Model</label>
+                    <select name="1" id="modelMO" class="mainContent__select" disabled>
+                        <option value="none" selected>Wybierz model...</option>
+                    </select>
+                    <button id="btnMO" class="mainContent__btn">Zatwierdź</button>
+                </div>
                 <div class="mainContent__newWindow">
-                    <div class="mainContent__close">
-                    </div>
+                    <div class="mainContent__close"></div>
                     <h1 id="newWindow__h1"></h1>
                     <h2 id="newWindow__firstH2"></h2>
                     <a class="mainContent__btn" id="newWindow__firstBtn">Pobierz</a>
@@ -52,6 +64,6 @@
                 </div>
         </div>
     </main>
-    <script type="module" src="script.js"></script>
+    <script type="module" src="client.js"></script>
 </body>
 </html>
