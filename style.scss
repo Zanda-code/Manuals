@@ -10,8 +10,8 @@ body{
     background-color: #2d2d2d;
 }
 h6{
-    font-size: 1.5em;
-    margin: 1em .4em 1em .4em;
+    font-size: 20px;
+    margin: 1em 0 1em;
 }
 .mainContent{
     color: $fontColor;
@@ -28,9 +28,10 @@ h6{
         transform: translateY(-10px);
         &::after{
             content: "\00d7";
-            font-size: 4em;
+            font-size: 3em;
             color: #000;
             cursor: pointer;
+            margin: 10px;
         }
     }
     &__newWindow{
@@ -42,7 +43,6 @@ h6{
         position: fixed;
         min-width: 20%;
         width: auto;
-        height: 70%;
         height: auto;
         background-color: #ffffff;
         padding: 20px 20px 40px 20px;
@@ -58,11 +58,12 @@ h6{
         margin-left: 15px;
     }
     &__box{
-        width: 30vh;
+        min-width: 15vw;
         height: auto;
         border: 1px solid $fontColor;
         border-radius: 15px;
         margin: 3% 3% 3% 3%;
+        padding: 10px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -103,3 +104,10 @@ h6{
     }
 }
 
+@media screen and (max-width: 530px) {
+    .mainContent{
+        &__newWindow{
+            transform: translateY(-70%);
+        }
+    }
+}

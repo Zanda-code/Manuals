@@ -1,0 +1,24 @@
+{
+    "SATEL": [
+    {
+        "name": "SP4001",
+        "userManual": "https://ivel.pl/download/sp4001_Sygnalizator_Instrukcja%20obslugi.pdf"
+    },
+    {
+        "name": "SP4004",
+        "userManual": "https://www.montersi.pl/instrukcje/sp-4004-instrukcja.pdf"
+    }
+    ],
+    "DSC": [
+    {
+        "name": "MOS (Wszystkie)",
+        "userManual": "https://ealarmy.com.pl/pobierz/832/instrukcja-mos"
+    }
+    ],
+    "YOTOGI": [
+    {
+        "name": "TI-700",
+        "userManual": "https://ivolta.pl/gfx-base/files/Yotogi/TI700-ii-pl.pdf"
+    }
+    ]
+}

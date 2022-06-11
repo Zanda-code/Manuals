@@ -1,6 +1,7 @@
 // AS - Alarm Systems
 // SE - Sensors
 // MO - Modules
+// SI - Siren
 
 import JsonAS from "./data.json" assert {type: "json"};
 const namesAS = Object.getOwnPropertyNames(JsonAS);
@@ -8,6 +9,8 @@ import JsonSE from "./dataSE.json" assert {type: "json"};
 const namesSE = Object.getOwnPropertyNames(JsonSE);
 import JsonMO from "./dataMO.json" assert {type: "json"};
 const namesMO = Object.getOwnPropertyNames(JsonMO);
+import JsonSI from "./dataSI.json" assert {type: "json"};
+const namesSI = Object.getOwnPropertyNames(JsonSI);
 
 const selectProducerAS = document.querySelector(`#producer`);
 const selectModelAS = document.querySelector(`#model`);
@@ -18,6 +21,9 @@ const btnSE = document.querySelector(`#btnSE`);
 const selectProducerMO = document.querySelector(`#producerMO`);
 const selectModelMO = document.querySelector(`#modelMO`);
 const btnMO = document.querySelector(`#btnMO`);
+const selectProducerSI = document.querySelector(`#producerSI`);
+const selectModelSI = document.querySelector(`#modelSI`);
+const btnSI = document.querySelector(`#btnSI`);
 
 
 const newWindow = document.querySelector(`.mainContent__newWindow`);
@@ -47,6 +53,13 @@ const createProducerMO = () => {
         e = document.createElement(`option`);
         e.innerText = namesMO[i];
         selectProducerMO.appendChild(e);
+    })
+}
+const createProducerSI = () => {
+    namesSI.forEach((e, i) => {
+        e = document.createElement(`option`);
+        e.innerText = namesSI[i];
+        selectProducerSI.appendChild(e);
     })
 }
 const availableModelAS = () => {
@@ -94,6 +107,21 @@ const availableModelMO = () => {
     }) 
     }
 }
+const availableModelSI = () => {
+    if (selectProducerSI.value === `Wybierz producenta...`){
+        selectModelSI.setAttribute(`disabled`, `True`);
+    }
+    else{
+        selectModelSI.removeAttribute(`disabled`);
+        selectModelSI.textContent = ``;
+        const newArray = JsonSI[`${selectProducerSI.value}`];
+        newArray.forEach((el, i) => {
+        el = document.createElement(`option`);
+        selectModelSI.appendChild(el);
+        el.innerText = `${newArray[i].name}`;
+    }) 
+    }
+}
 const findGoodManualsAS = () => {
     const newArray = JsonAS[`${selectProducerAS.value}`];
     const newArrayFiltered = newArray.filter(i => i.name === selectModelAS.value);
@@ -130,6 +158,17 @@ const findGoodManualsMO = () => {
     const hrefUserManual = newArrayFiltered[0].userManual;
     newWindowFirstBtn.setAttribute(`href`, hrefUserManual);
 }
+const findGoodManualsSI = () => {
+    const newArray = JsonSI[`${selectProducerSI.value}`];
+    const newArrayFiltered = newArray.filter(i => i.name === selectModelSI.value);
+    newWindowH1.innerText = `${selectProducerSI.value} - ${selectModelSI.value}`;
+    newWindowFirstH2.innerText = `Instrukcja`;
+    newWindowSecondH2.innerText = ``;
+    newWindowSecondBtn.style.display = `none`;
+    newWindow.style.display = `flex`;
+    const hrefUserManual = newArrayFiltered[0].userManual;
+    newWindowFirstBtn.setAttribute(`href`, hrefUserManual);
+}
 const closeWindow = () => {
     newWindow.style.display = `none`;
 }
@@ -137,9 +176,11 @@ const events = () => {
     selectProducerAS.addEventListener(`change`, availableModelAS);
     selectProducerSE.addEventListener(`change`, availableModelSE);
     selectProducerMO.addEventListener(`change`, availableModelMO);
+    selectProducerSI.addEventListener(`change`, availableModelSI);
     btnAS.addEventListener(`click`, findGoodManualsAS);
     btnSE.addEventListener(`click`, findGoodManualsSE);
     btnMO.addEventListener(`click`, findGoodManualsMO);
+    btnSI.addEventListener(`click`, findGoodManualsSI);
     closeBtn.addEventListener(`click`, closeWindow);
 }
 
@@ -147,3 +188,4 @@ events();
 createProducerAS();
 createProducerSE();
 createProducerMO();
+createProducerSI();

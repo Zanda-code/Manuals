@@ -7,14 +7,18 @@ var _dataSE = _interopRequireDefault(require("./dataSE.json"));
 
 var _dataMO = _interopRequireDefault(require("./dataMO.json"));
 
+var _dataSI = _interopRequireDefault(require("./dataSI.json"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 // AS - Alarm Systems
 // SE - Sensors
 // MO - Modules
+// SI - Siren
 var namesAS = Object.getOwnPropertyNames(_data["default"]);
 var namesSE = Object.getOwnPropertyNames(_dataSE["default"]);
 var namesMO = Object.getOwnPropertyNames(_dataMO["default"]);
+var namesSI = Object.getOwnPropertyNames(_dataSI["default"]);
 var selectProducerAS = document.querySelector("#producer");
 var selectModelAS = document.querySelector("#model");
 var btnAS = document.querySelector("#btnAS");
@@ -24,6 +28,9 @@ var btnSE = document.querySelector("#btnSE");
 var selectProducerMO = document.querySelector("#producerMO");
 var selectModelMO = document.querySelector("#modelMO");
 var btnMO = document.querySelector("#btnMO");
+var selectProducerSI = document.querySelector("#producerSI");
+var selectModelSI = document.querySelector("#modelSI");
+var btnSI = document.querySelector("#btnSI");
 var newWindow = document.querySelector(".mainContent__newWindow");
 var newWindowH1 = document.querySelector("#newWindow__h1");
 var newWindowFirstH2 = document.querySelector("#newWindow__firstH2");
@@ -53,6 +60,14 @@ var createProducerMO = function createProducerMO() {
     e = document.createElement("option");
     e.innerText = namesMO[i];
     selectProducerMO.appendChild(e);
+  });
+};
+
+var createProducerSI = function createProducerSI() {
+  namesSI.forEach(function (e, i) {
+    e = document.createElement("option");
+    e.innerText = namesSI[i];
+    selectProducerSI.appendChild(e);
   });
 };
 
@@ -107,6 +122,23 @@ var availableModelMO = function availableModelMO() {
   }
 };
 
+var availableModelSI = function availableModelSI() {
+  if (selectProducerSI.value === "Wybierz producenta...") {
+    selectModelSI.setAttribute("disabled", "True");
+  } else {
+    selectModelSI.removeAttribute("disabled");
+    selectModelSI.textContent = "";
+
+    var newArray = _dataSI["default"]["".concat(selectProducerSI.value)];
+
+    newArray.forEach(function (el, i) {
+      el = document.createElement("option");
+      selectModelSI.appendChild(el);
+      el.innerText = "".concat(newArray[i].name);
+    });
+  }
+};
+
 var findGoodManualsAS = function findGoodManualsAS() {
   var newArray = _data["default"]["".concat(selectProducerAS.value)];
 
@@ -154,6 +186,21 @@ var findGoodManualsMO = function findGoodManualsMO() {
   newWindowFirstBtn.setAttribute("href", hrefUserManual);
 };
 
+var findGoodManualsSI = function findGoodManualsSI() {
+  var newArray = _dataSI["default"]["".concat(selectProducerSI.value)];
+
+  var newArrayFiltered = newArray.filter(function (i) {
+    return i.name === selectModelSI.value;
+  });
+  newWindowH1.innerText = "".concat(selectProducerSI.value, " - ").concat(selectModelSI.value);
+  newWindowFirstH2.innerText = "Instrukcja";
+  newWindowSecondH2.innerText = "";
+  newWindowSecondBtn.style.display = "none";
+  newWindow.style.display = "flex";
+  var hrefUserManual = newArrayFiltered[0].userManual;
+  newWindowFirstBtn.setAttribute("href", hrefUserManual);
+};
+
 var closeWindow = function closeWindow() {
   newWindow.style.display = "none";
 };
@@ -162,9 +209,11 @@ var events = function events() {
   selectProducerAS.addEventListener("change", availableModelAS);
   selectProducerSE.addEventListener("change", availableModelSE);
   selectProducerMO.addEventListener("change", availableModelMO);
+  selectProducerSI.addEventListener("change", availableModelSI);
   btnAS.addEventListener("click", findGoodManualsAS);
   btnSE.addEventListener("click", findGoodManualsSE);
   btnMO.addEventListener("click", findGoodManualsMO);
+  btnSI.addEventListener("click", findGoodManualsSI);
   closeBtn.addEventListener("click", closeWindow);
 };
 
@@ -172,7 +221,8 @@ events();
 createProducerAS();
 createProducerSE();
 createProducerMO();
-},{"./data.json":2,"./dataMO.json":3,"./dataSE.json":4}],2:[function(require,module,exports){
+createProducerSI();
+},{"./data.json":2,"./dataMO.json":3,"./dataSE.json":4,"./dataSI.json":5}],2:[function(require,module,exports){
 module.exports={
     "DSC": [
     {
@@ -230,7 +280,7 @@ module.exports={
     {
         "name": "versaIP",
         "userManual": "https://www.montersi.pl/instrukcje/versa-led-gr-instrukcja.pdf",
-        "programmingManual": "https://www.montersi.pl/instrukcje/versa-ip-instrukcja.pdf"
+        "programmingManual": "https://alarmserwis.pl/files/46702b583a145149d9915acb13a53a08397de4ae.pdf"
     },
     {
         "name": "perfecta",
@@ -468,6 +518,31 @@ module.exports={
             "name": "SIP-3020",
             "userManual": "https://www.napad.pl/instrukcje/sip-wskazowki-instalacyjne.pdf"
         }
+    ]
+}
+},{}],5:[function(require,module,exports){
+module.exports={
+    "SATEL": [
+    {
+        "name": "SP4001",
+        "userManual": "https://ivel.pl/download/sp4001_Sygnalizator_Instrukcja%20obslugi.pdf"
+    },
+    {
+        "name": "SP4004",
+        "userManual": "https://www.montersi.pl/instrukcje/sp-4004-instrukcja.pdf"
+    }
+    ],
+    "DSC": [
+    {
+        "name": "MOS (Wszystkie)",
+        "userManual": "https://ealarmy.com.pl/pobierz/832/instrukcja-mos"
+    }
+    ],
+    "YOTOGI": [
+    {
+        "name": "TI-700",
+        "userManual": "https://ivolta.pl/gfx-base/files/Yotogi/TI700-ii-pl.pdf"
+    }
     ]
 }
 },{}]},{},[1]);

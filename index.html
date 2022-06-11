@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex" />
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +20,7 @@
                     <h6>Centrale alarmowe</h6>
                     <label for="producer">Producent</label>
                     <select name="1" id="producer" class="mainContent__select">
-                        <option id="controlOption" selected>Wybierz producenta...</option>
+                        <option id="controlOption" selected>Wybierz producenta</option>
                         
                     </select>
                     <label for="model">Model</label>
@@ -32,7 +33,7 @@
                     <h6>Czujniki</h6>
                     <label for="producer">Producent</label>
                     <select name="1" id="producerSE" class="mainContent__select">
-                        <option id="controlOption" selected>Wybierz producenta...</option>
+                        <option id="controlOption" selected>Wybierz producenta</option>
                         
                     </select>
                     <label for="model">Model</label>
@@ -45,7 +46,7 @@
                     <h6>Moduły</h6>
                     <label for="producer">Producent</label>
                     <select name="1" id="producerMO" class="mainContent__select">
-                        <option id="controlOption" selected>Wybierz producenta...</option>
+                        <option id="controlOption" selected>Wybierz producenta</option>
                         
                     </select>
                     <label for="model">Model</label>
@@ -53,6 +54,19 @@
                         <option value="none" selected>Wybierz model...</option>
                     </select>
                     <button id="btnMO" class="mainContent__btn">Zatwierdź</button>
+                </div>
+                <div class="mainContent__box">
+                    <h6>Syreny</h6>
+                    <label for="producer">Producent</label>
+                    <select name="1" id="producerSI" class="mainContent__select">
+                        <option id="controlOption" selected>Wybierz producenta</option>
+                        
+                    </select>
+                    <label for="model">Model</label>
+                    <select name="1" id="modelSI" class="mainContent__select" disabled>
+                        <option value="none" selected>Wybierz model...</option>
+                    </select>
+                    <button id="btnSI" class="mainContent__btn">Zatwierdź</button>
                 </div>
                 <div class="mainContent__newWindow">
                     <div class="mainContent__close"></div>
